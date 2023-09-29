@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.13.12",
     "@babel/register": "^7.13.14",
     "@vitejs/plugin-react": "^4.0.0",
-    "changed-test-ids": "^1.6.0",
+    "changed-test-ids": "^1.8.0",
     "prettier": "^2.8.3",
     "prop-types": "^15.7.2",
     "typescript": "^4.9.5",

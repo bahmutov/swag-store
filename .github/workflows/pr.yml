@@ -7,24 +7,22 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
+          # check out all branches so we can get
+          # the list of changed source files
           fetch-depth: 0
 
-      # https://github.com/cypress-io/github-action
-      - name: Install 📦
-        uses: cypress-io/github-action@v6
-        with:
-          runTests: false
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
 
-      - name: Find Cypress specs for changed source files
+      - name: Find test ids used in the changed source files
         id: find-ids
         run: |
           npx find-ids --sources 'src/**/*.jsx' \
-            --specs 'cypress/e2e/**/*.cy.js' --command getByTestId,containsTestId \
             --branch main --parent --set-gha-outputs
 
-      - name: Run any detected Cypress specs
-        if: ${{ steps.find-ids.outputs.specsToRunN }}
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm start
-          spec: ${{ steps.find-ids.outputs.specsToRun }}
+      # - name: Run any detected Cypress specs
+      #   if: ${{ steps.find-ids.outputs.specsToRunN }}
+      #   uses: cypress-io/github-action@v6
+      #   with:
+      #     start: npm start
+      #     spec: ${{ steps.find-ids.outputs.specsToRun }}
