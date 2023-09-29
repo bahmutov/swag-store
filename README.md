@@ -1,5 +1,7 @@
 # swag-store
 
+> Swag store example app without any tests
+
 This repo has no tests.
 
 ## Small print
