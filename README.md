@@ -2,7 +2,9 @@
 
 > Swag store example app without any tests
 
-This repo has no tests.
+This repo has no tests, they are in the repo [bahmutov/swag-store-tests](https://github.com/bahmutov/swag-store-tests).
+
+📝 Read the blog post [Pick Tests Using Test Ids From Another Source Repo](https://glebbahmutov.com/blog/pick-tests-in-another-repo/)
 
 ## Small print
 
