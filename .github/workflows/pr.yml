@@ -11,6 +11,9 @@ jobs:
           # the list of changed source files
           fetch-depth: 0
 
+      - name: List local branches
+        run: git branch
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
