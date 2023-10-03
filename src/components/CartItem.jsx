@@ -35,6 +35,7 @@ const CartItem = ({ item, history, showButton }) => {
         className="cart_item"
         data-item-id={item.id}
         data-item-quantity={shoppingCartItem.n}
+        testId="CartItem"
       >
         <input
           type="number"
@@ -82,6 +83,7 @@ const CartItem = ({ item, history, showButton }) => {
 
   return <div className="removed_cart_item" />
 }
+
 CartItem.propTypes = {
   /**
    * The item

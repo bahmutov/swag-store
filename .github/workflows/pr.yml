@@ -4,21 +4,25 @@ jobs:
   targeted-specs:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout the current merge commit 🛎️
         uses: actions/checkout@v4
-        with:
-          # check out all branches so we can get
-          # the list of changed source files
-          fetch-depth: 0
+
+      - name: Pull the default main branch
+        run: git fetch origin main:main
+
+      - name: List all branches again
+        run: git branch -v -a
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
       - name: Find test ids used in the changed source files
         id: find-ids
+        env:
+          DEBUG: changed-test-ids
         run: |
           npx find-ids --sources 'src/**/*.jsx' \
-            --branch main --parent --set-gha-outputs
+            --branch main --set-gha-outputs
 
       - name: Trigger E2E tests based on test IDs
         # the tests reside in the repo bahmutov/swag-store-tests
