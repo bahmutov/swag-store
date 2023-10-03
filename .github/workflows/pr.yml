@@ -19,11 +19,7 @@ jobs:
         run: git branch -v -a
 
       - name: Pull the default main branch
-        # and switch back to the current commit
-        run: |
-          git checkout -b main
-          git pull origin main --no-ff
-          git checkout -
+        run: git fetch origin main:main
 
       - name: List all branches again
         run: git branch -v -a
