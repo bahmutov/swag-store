@@ -12,12 +12,6 @@ jobs:
       - name: Checkout the current merge commit 🛎️
         uses: actions/checkout@v4
 
-      - name: List local branches
-        run: git branch
-
-      - name: List all branches
-        run: git branch -v -a
-
       - name: Pull the default main branch
         run: git fetch origin main:main
 
