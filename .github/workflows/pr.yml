@@ -4,11 +4,6 @@ jobs:
   targeted-specs:
     runs-on: ubuntu-22.04
     steps:
-      # - name: Checkout the main branch🛎️
-      #   uses: actions/checkout@v4
-      #   with:
-      #     ref: main
-
       - name: Checkout the current merge commit 🛎️
         uses: actions/checkout@v4
 
