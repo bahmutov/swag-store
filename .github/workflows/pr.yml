@@ -22,7 +22,7 @@ jobs:
         # and switch back to the current commit
         run: |
           git checkout -b main
-          git pull origin main --ff-only
+          git pull origin main --no-ff
           git checkout -
 
       - name: List all branches again
