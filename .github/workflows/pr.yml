@@ -29,6 +29,8 @@ jobs:
 
       - name: Find test ids used in the changed source files
         id: find-ids
+        env:
+          DEBUG: changed-test-ids
         run: |
           npx find-ids --sources 'src/**/*.jsx' \
             --branch main --set-gha-outputs
