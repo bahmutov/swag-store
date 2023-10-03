@@ -31,7 +31,7 @@ jobs:
         id: find-ids
         run: |
           npx find-ids --sources 'src/**/*.jsx' \
-            --branch main --parent --set-gha-outputs
+            --branch main --set-gha-outputs
 
       - name: Trigger E2E tests based on test IDs
         # the tests reside in the repo bahmutov/swag-store-tests
