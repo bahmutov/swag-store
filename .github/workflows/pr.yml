@@ -15,6 +15,9 @@ jobs:
       - name: List local branches
         run: git branch
 
+      - name: List all branches
+        run: git branch -v -a
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
