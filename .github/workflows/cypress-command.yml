@@ -19,8 +19,9 @@ jobs:
 
       - name: Check out the reference branch ${{ github.event.client_payload.slash_command.args.named.ref }}
         run: |
-          git checkout -b ${{ github.event.client_payload.slash_command.args.named.ref }}
-          git fetch origin ${{ github.event.client_payload.slash_command.args.named.ref }}
+          git checkout -b \
+            ${{ github.event.client_payload.slash_command.args.named.ref }} \
+            origin/${{ github.event.client_payload.slash_command.args.named.ref }}
 
       - name: Print branches again 🕊️
         run: git branch -a -v
