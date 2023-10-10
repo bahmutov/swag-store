@@ -8,11 +8,11 @@ jobs:
   test-comment:
     runs-on: ubuntu-22.04
     steps:
-      - name: Print event
-        run: echo "${{ toJson(github.event) }}"
+      - name: Print event 🖨️
+        run: echo "${{ toJson(github.event.client_payload.slash_command) }}"
 
       - name: Checkout repo 🛎️
         uses: actions/checkout@v4
 
-      - name: Print branches
+      - name: Print branches 🕊️
         run: git branch -a -v
