@@ -9,6 +9,12 @@ jobs:
       - name: Print inputs 🖨️
         run: echo "${{ toJson(github.event.issue) }}"
 
+      # note: the token SLASH_COMMAND_GH_TOKEN
+      # should have
+      #   Repository permissions:
+      #     Contents (commits, branches) "Read-only"
+      #     Actions "Read and write"
+
       # we only know the pull request number, like 12, 20, etc
       # but to trigger the workflow we need the branch name
       # https://github.com/bahmutov/get-branch-name-by-pr
