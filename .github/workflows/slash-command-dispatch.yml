@@ -9,6 +9,9 @@ jobs:
       - name: Print inputs 🖨️
         run: echo "${{ toJson(github.event.issue) }}"
 
+      - name: Print branches
+        run: git branch -a -v
+
       # note: the token SLASH_COMMAND_GH_TOKEN
       # is classic GH token because could not get
       # the workflows dispatched using the new ones

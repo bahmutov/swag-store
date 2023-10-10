@@ -2,7 +2,7 @@ name: Cypress command
 
 on:
   repository_dispatch:
-    types: ['cypress_command']
+    types: ['cypress-command']
 
 jobs:
   test-comment:
