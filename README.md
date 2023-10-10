@@ -6,6 +6,8 @@ This repo has no tests, they are in the repo [bahmutov/swag-store-tests](https:/
 
 📝 Read the blog post [Pick Tests Using Test Ids From Another Source Repo](https://glebbahmutov.com/blog/pick-tests-in-another-repo/)
 
+Cypress slash command.
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2023
