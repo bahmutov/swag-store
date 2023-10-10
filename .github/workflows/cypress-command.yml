@@ -1,0 +1,15 @@
+name: Cypress command
+
+on:
+  repository_dispatch:
+    types: ['cypress_command']
+
+jobs:
+  test-comment:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Print event
+        run: echo "${{ toJson(github.event) }}"
+
+      - name: Print branches
+        run: git branch -a -v
