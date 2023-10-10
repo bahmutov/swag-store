@@ -24,3 +24,6 @@ jobs:
 
       - name: Print branches again 🕊️
         run: git branch -a -v
+
+      - name: Changed files in this branch
+        run: git diff --name-only --diff-filter=AMR origin/main
