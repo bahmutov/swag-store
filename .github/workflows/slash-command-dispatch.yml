@@ -10,10 +10,8 @@ jobs:
         run: echo "${{ toJson(github.event.issue) }}"
 
       # note: the token SLASH_COMMAND_GH_TOKEN
-      # should have
-      #   Repository permissions:
-      #     Contents (commits, branches) "Read-only"
-      #     Actions "Read and write"
+      # is classic GH token because could not get
+      # the workflows dispatched using the new ones
 
       # we only know the pull request number, like 12, 20, etc
       # but to trigger the workflow we need the branch name
@@ -30,6 +28,7 @@ jobs:
         uses: peter-evans/slash-command-dispatch@v3
         with:
           token: ${{ secrets.SLASH_COMMAND_GH_TOKEN }}
+          reaction-token: ${{ secrets.SLASH_COMMAND_GH_TOKEN }}
           static-args: |
             ref=${{ steps.pr.outputs.branch }}
             repository=${{ github.repository }}
