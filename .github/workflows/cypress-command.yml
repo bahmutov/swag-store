@@ -11,5 +11,8 @@ jobs:
       - name: Print event
         run: echo "${{ toJson(github.event) }}"
 
+      - name: Checkout repo 🛎️
+        uses: actions/checkout@v4
+
       - name: Print branches
         run: git branch -a -v
